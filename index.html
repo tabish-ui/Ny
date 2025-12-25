@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Happy New Year 2026 🔥</title>
+    <style>
+        :root {
+            --primary: #ff0055;
+            --secondary: #00f3ff;
+            --gold: #ffd700;
+        }
+
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+        body {
+            margin: 0; padding: 0;
+            background: #000; color: #fff;
+            font-family: 'Arial Black', sans-serif;
+            text-align: center;
+        }
+
+        /* Fireworks Background */
+        #canvas {
+            position: fixed; top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: 1; pointer-events: none;
+        }
+
+        .wrapper {
+            position: relative; z-index: 2;
+            padding: 10px;
+            display: flex; flex-direction: column; align-items: center;
+            padding-bottom: 100px; /* Space for sticky ad */
+        }
+
+        /* Ad Slots */
+        .ad-container {
+            margin: 15px 0;
+            width: 100%;
+            max-width: 468px;
+            min-height: 60px;
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        /* Sticky Bottom Ad */
+        .sticky-ad {
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 468px;
+            height: 60px;
+            background: rgba(0,0,0,0.8);
+            z-index: 999;
+            display: flex;
+            justify-content: center;
+            border-top: 1px solid var(--gold);
+        }
+
+        /* Content Styling */
+        .main-img {
+            width: 80%; max-width: 280px;
+            border: 3px solid var(--gold);
+            border-radius: 20px;
+            box-shadow: 0 0 20px var(--primary);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce { 0%, 100% {transform:translateY(0)} 50% {transform:translateY(-10px)} }
+
+        .sender-name {
+            font-size: 2rem; color: var(--gold);
+            text-shadow: 0 0 10px red; display: block;
+            margin-top: 15px; text-transform: uppercase;
+        }
+
+        .hny-text {
+            font-size: 2.2rem; margin: 10px 0;
+            background: linear-gradient(45deg, #fff, #ffd700, #ff0055);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            font-weight: 900;
+        }
+
+        .year-text {
+            font-size: 5rem; color: #fff;
+            text-shadow: 0 0 10px var(--secondary), 0 0 30px var(--secondary);
+            animation: flash 0.6s infinite alternate;
+        }
+
+        @keyframes flash { from {opacity: 0.6; transform: scale(0.9);} to {opacity: 1; transform: scale(1.1);} }
+
+        .quote-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 15px; border-radius: 15px;
+            margin: 15px 0; border-left: 5px solid var(--primary);
+            width: 90%; max-width: 350px; font-style: italic;
+        }
+
+        .creator-card {
+            background: #fff; padding: 20px; border-radius: 25px;
+            width: 95%; max-width: 350px;
+            box-shadow: 0 10px 40px var(--primary);
+            color: #000; margin-top: 10px;
+        }
+
+        input {
+            width: 100%; padding: 12px; border: 2px solid #ddd;
+            border-radius: 10px; font-size: 1rem; margin-bottom: 10px;
+            text-align: center; outline: none;
+        }
+
+        .share-btn {
+            width: 100%; padding: 15px;
+            background: linear-gradient(45deg, var(--primary), #ffaa00);
+            color: #fff; border: none; border-radius: 10px;
+            font-size: 1.2rem; font-weight: 900; cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="canvas"></canvas>
+
+    <div class="wrapper">
+        
+        <!-- Ad 1: TOP -->
+        <div class="ad-container">
+            <script type="text/javascript">
+                atOptions = { 'key' : '9e8ec3318212ccc5ad13db6033d9e811', 'format' : 'iframe', 'height' : 60, 'width' : 468, 'params' : {} };
+            </script>
+            <script type="text/javascript" src="https://www.highperformanceformat.com/9e8ec3318212ccc5ad13db6033d9e811/invoke.js"></script>
+        </div>
+
+        <img src="newyear.gif" alt="New Year" class="main-img">
+
+        <div id="greetingDisplay" style="display:none;">
+            <span id="nameDisplay" class="sender-name"></span>
+            <span style="font-size: 1rem;">ki taraf se...</span>
+            <h1 class="hny-text">HAPPY NEW YEAR</h1>
+            <div class="year-text">2026</div>
+            <div class="quote-card"><span id="quoteDisplay"></span></div>
+        </div>
+
+        <div id="defaultMsg">
+            <h1 class="hny-text">ADVANCE HAPPY</h1>
+            <div class="year-text">2026</div>
+        </div>
+
+        <!-- Ad 2: MIDDLE -->
+        <div class="ad-container">
+            <script type="text/javascript">
+                atOptions = { 'key' : '9e8ec3318212ccc5ad13db6033d9e811', 'format' : 'iframe', 'height' : 60, 'width' : 468, 'params' : {} };
+            </script>
+            <script type="text/javascript" src="https://www.highperformanceformat.com/9e8ec3318212ccc5ad13db6033d9e811/invoke.js"></script>
+        </div>
+
+        <div class="creator-card">
+            <p style="margin:0 0 10px 0;">🔥 Apna Naam Likhein 🔥</p>
+            <input type="text" id="userInput" placeholder="Naam Yahan Likhein..." maxlength="20">
+            <button class="share-btn" onclick="handleShare()">SABKO BHEJEIN 🚀</button>
+        </div>
+
+        <p style="margin-top:20px; font-size: 0.7rem; opacity:0.5;">Happy New Year 2026 Dhamaka</p>
+    </div>
+
+    <!-- Ad 3: STICKY BOTTOM -->
+    <div class="sticky-ad">
+        <script type="text/javascript">
+            atOptions = { 'key' : '9e8ec3318212ccc5ad13db6033d9e811', 'format' : 'iframe', 'height' : 60, 'width' : 468, 'params' : {} };
+        </script>
+        <script type="text/javascript" src="https://www.highperformanceformat.com/9e8ec3318212ccc5ad13db6033d9e811/invoke.js"></script>
+    </div>
+
+    <script>
+        const energeticQuotes = [
+            "Naya saal, nayi umeed, naya josh! 2026 mein dhoom macha do! 🔥",
+            "Beet gaya jo saal use bhul jao, naye saal mein aag laga do! 🚀",
+            "Sukh, Shanti aur Samridhi ki baarish ho aap par! Happy 2026! 🎊",
+            "2026 ka har din aapke liye dhamakedar ho! 🥂"
+        ];
+
+        window.onload = () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const sender = urlParams.get('wish');
+            if (sender) {
+                document.getElementById('defaultMsg').style.display = 'none';
+                document.getElementById('greetingDisplay').style.display = 'block';
+                document.getElementById('nameDisplay').innerText = decodeURIComponent(sender);
+                document.getElementById('quoteDisplay').innerText = energeticQuotes[Math.floor(Math.random() * energeticQuotes.length)];
+            }
+            startFirecrackers();
+        };
+
+        async function handleShare() {
+            const name = document.getElementById('userInput').value;
+            if (!name) { alert("Pehle naam likho!"); return; }
+            const finalUrl = window.location.origin + window.location.pathname + "?wish=" + encodeURIComponent(name);
+            const shareText = `Mainne tumhare liye naye saal ka khaas tohfa bheja hai! 🎁 Niche click karke dekho 👇\n${finalUrl}`;
+
+            if (navigator.share) {
+                try { await navigator.share({ title: 'Happy New Year', text: shareText, url: finalUrl }); } 
+                catch (err) { window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(shareText)}`, '_blank'); }
+            } else {
+                window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(shareText)}`, '_blank');
+            }
+        }
+
+        function startFirecrackers() {
+            const canvas = document.getElementById('canvas');
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+            function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+            window.addEventListener('resize', resize);
+            resize();
+
+            class Particle {
+                constructor(x, y, color) {
+                    this.x = x; this.y = y; this.color = color;
+                    this.velocity = { x: (Math.random()-0.5)*8, y: (Math.random()-0.5)*8 };
+                    this.alpha = 1;
+                }
+                draw() {
+                    ctx.save(); ctx.globalAlpha = this.alpha; ctx.beginPath();
+                    ctx.arc(this.x, this.y, 2.5, 0, Math.PI*2); ctx.fillStyle = this.color;
+                    ctx.fill(); ctx.restore();
+                }
+                update() { this.x += this.velocity.x; this.y += this.velocity.y; this.alpha -= 0.02; }
+            }
+
+            function animate() {
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.2)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                if(Math.random() < 0.1) {
+                    const x = Math.random()*canvas.width; const y = Math.random()*canvas.height*0.6;
+                    const color = `hsl(${Math.ran
